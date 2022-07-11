@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <style>
+        .container {
+            width: 60rem;
+            border: 2px solid black;
+            height: 27rem;
+            display: block;
+            margin: auto;
+            margin-top: 89px;
+            background-color: #cafaffed;
+            box-shadow: 2px 2px 36px #000000bf;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 60px 0px;
+
+        }
+
+        #btn {
+            text-align: center;
+            padding: 18px 0px;
+        }
+
+        #btn #bt1 {
+            margin-left: 10px;
+        }
+
+        #btn button {
+            padding: 7px 62px;
+            border: 2px solid beige;
+            background-color: #b3ffe6;
+            border-radius: 16px;
+        }
+        #btn button:hover{
+            background-color: #2dffba99;
+        }
+        .content .sec-label {
+            padding-left: 195px;
+        }
+
+        .container label {
+            font-size: 1.2rem;
+        }
+
+        .container input {
+            padding-left: 22px;
+            margin-left: 16px;
+            border-radius: 10px;
+            height: 18px;
+        }
+
+        #percent {
+            text-align: center;
+            margin-top: 51px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h1>Percentage Calculator</h1>
+            <hr>
+            <div class="content">
+                <label for="obname">Enter Obtained Marks:</label><br>
+                <input type="number" name="obname" id="obname">
+                <label for="tname" class="sec-label">Enter Total Marks:</label><br>
+                <input type="number" name="tname" id="tname">
+            </div>
+            <div id="btn">
+                <button id="bt" onclick="submit()">Submit</button>
+                <button id="bt1" onclick="clr()">Clear</button>
+            </div>
+            <hr>
+            <div id="percent">
+                <label for="pname">Your Percentage Will be:</label>
+                <input type="number" name="pname" id="pname">
+            </div>
+        </div>
+    </section>
+    <script>
+        function submit() {
+            let input1 = document.querySelector('.content #obname');
+            let input2 = document.querySelector('.content #tname');
+            let input3 = document.querySelector('#percent #pname');
+            let button = document.querySelector('#btn #bt');
+            console.log("Obtained Marks is:", input1.value);
+            console.log("Total Marks is:", input2.value)
+            percentage = (input1.value / input2.value) * 100;
+            input3.value = percentage;
+            console.log("Percentage Will be:", input3.value);
+            // 
+        }
+        function clr(){
+            let input1 = document.querySelector('.content #obname');
+            let input2 = document.querySelector('.content #tname');
+            let input3 = document.querySelector('#percent #pname');
+            let button = document.querySelector('#btn #bt1');
+            let content1 = "";
+            input1.value = content1;
+            input2.value = content1;
+            input3.value = content1;
+
+        }
+    </script>
+
+</body>
+
+</html>
